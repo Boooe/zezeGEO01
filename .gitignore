@@ -1,0 +1,9 @@
+# 临时与构建缓存
+*.tmp
+~$*
+.DS_Store
+Thumbs.db
+# 大体积可再生成产物
+dist/*.exe
+dist_ondir/*.exe
+*.mp4
