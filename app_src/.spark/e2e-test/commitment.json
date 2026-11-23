@@ -1,9 +1,0 @@
-{"cases":[
-  {"id":1,"description":"用 demo_client2 / Client@2026 登录 → 强制跳转到承诺书确认页（URL含/commitment，标题《客户信息真实性承诺书》），勾选框初始不可用（禁用态），「确认并继续」按钮置灰"},
-  {"id":2,"description":"在承诺书页，未滚动到底时勾选框不可点；滚动到正文底部后勾选框变为可用，勾选后「确认并继续」按钮变为可点击；点击确认后跳转到首页（URL为/）"},
-  {"id":3,"description":"demo_client2 签署成功后，登出再重新登录 → 直接进入首页，不再弹出承诺书页"},
-  {"id":4,"description":"用 demo_client / Client@2026 登录 → 直接进入首页，不弹出承诺书（已签署 v1.0）"},
-  {"id":5,"description":"admin 登录后，在侧边栏「客户交付」下点击「承诺书管理」→ 页面正常显示，列表中至少包含 demo_client（已签署）、demo_client2（签署后变为已签署）、client_jiazhuang（已签署）等记录，每条记录显示客户名称、账号、签署时间、IP、版本号、状态"},
-  {"id":6,"description":"在承诺书管理页，用「要求重签」操作把 demo_client2 设为需重签 → 列表中 demo_client2 状态变为「需重签」；登出后用 demo_client2 重新登录 → 再次弹出承诺书页"},
-  {"id":7,"description":"admin 登录后进入 设置 → 承诺书版本 tab → 看到当前激活版本 v1.0，点击「新建版本」，修改正文内容后保存 → 新版本号变为 v1.1；回到承诺书管理页，旧签署记录仍显示 v1.0"}
-]}

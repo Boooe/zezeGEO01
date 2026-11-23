@@ -1,6 +1,0 @@
-{"cases":[
-  {"id":1,"description":"demo_client2首次登录强制跳承诺书页，滚动到底激活勾选，确认签署后进首页"},
-  {"id":2,"description":"demo_client2二次登录不再弹承诺书，直接进首页"},
-  {"id":3,"description":"admin登录后左侧导航有承诺书管理入口，管理页列表能看到签署记录"},
-  {"id":4,"description":"admin把demo_client2设为需重签，demo_client2下次登录重新弹出承诺书"}
-]}

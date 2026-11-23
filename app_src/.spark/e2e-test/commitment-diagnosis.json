@@ -1,5 +1,0 @@
-{"cases":[
-  {"id":1,"description":"admin登录后查看左侧导航「客户交付」下是否有承诺书管理，并手动访问/commitment/management验证页面是否存在"},
-  {"id":2,"description":"demo_client2/Client@2026登录后验证是否强制跳转到承诺书页/commitment，以及手动访问/commitment是否显示页面"},
-  {"id":3,"description":"检查demo_client2登录后Network中/api/commitment/check请求的响应，以及Console是否有报错"}
-]}
