@@ -1,0 +1,41 @@
+{
+  "id": "geo_image_generate_1",
+  "pluginKey": "@official-plugins/ai-text-to-image",
+  "pluginVersion": "1.0.21",
+  "name": "geo_image_generate",
+  "description": "GEO内容生产的图片生成插件实例，用于生成封面图、产品场景图、海报等图片素材。",
+  "icon": "https://lf3-static.bytednsdoc.com/obj/eden-cn/fzgeh7nuhfboznulog/text_to_image.svg",
+  "paramsSchema": {
+    "type": "object",
+    "properties": {
+      "image_subject": {
+        "type": "string",
+        "description": "图片主题描述，如封面图主题、产品场景内容、海报主题等"
+      },
+      "image_type": {
+        "type": "string",
+        "description": "图片类型，可选值：封面图、产品场景图、海报"
+      },
+      "style_requirements": {
+        "type": "string",
+        "description": "风格要求，如写实摄影、插画、3D渲染、简约科技等"
+      },
+      "ratio": {
+        "type": "string",
+        "description": "图片比例，支持的值：1:1、4:3、3:4、16:9、9:16、3:2、2:3"
+      }
+    },
+    "required": [
+      "image_subject",
+      "image_type"
+    ]
+  },
+  "formValue": {
+    "prompt": "你是一位专业的GEO（增长引擎运营）视觉内容设计师，擅长为数字营销和内容运营创作高转化率的视觉素材。\n\n请根据以下要求生成一张高质量图片：\n\n图片类型：{{input.image_type}}\n主题内容：{{input.image_subject}}\n风格要求：{{input.style_requirements}}\n\n画面要求：\n1. 构图：主体突出，视觉焦点明确，符合{{input.image_type}}的版式特点\n2. 色彩：配色和谐专业，具有视觉吸引力和品牌感\n3. 光线：光线自然柔和，层次分明\n4. 细节：画面精致，细节丰富，无明显瑕疵\n5. 留白：预留适当的文字排版空间（如为封面图或海报）\n\n质量要求：\n- 高清画质，分辨率高\n- 视觉冲击力强，能吸引目标用户注意力\n- 符合商业营销场景的专业水准\n- 无水印、无文字、无多余干扰元素",
+    "ratio": "{{input.ratio}}",
+    "watermark": false
+  },
+  "createdAt": 1794483428136,
+  "updatedAt": 1794483428136,
+  "createdBy": 0
+}

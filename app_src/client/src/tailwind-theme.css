@@ -1,0 +1,331 @@
+:root {
+  /* === Unified Design Tokens (HSL) === */
+  --color-primary: 215 100% 59%;       /* #2E7DFF */
+  --color-primary-deep: 217 91% 55%;   /* #1E5FD6 */
+  --color-primary-soft: 215 100% 95%;  /* #EAF2FF */
+  --color-page-bg: 210 40% 98%;        /* #F7F9FC */
+  --color-card-bg: 0 0% 100%;          /* #FFFFFF */
+  --color-border: 220 20% 93%;         /* #E6EAF2 */
+  --color-divider: 218 32% 95%;        /* #EEF2F7 */
+  --color-text-primary: 222 47% 11%;   /* #0F172A */
+  --color-text-secondary: 218 17% 44%; /* #5B6B85 */
+  --color-text-weak: 215 16% 65%;      /* #94A3B8 */
+  --color-success: 160 84% 39%;        /* #10B981 */
+  --color-warning: 38 92% 50%;         /* #F59E0B */
+  --color-danger: 0 84% 60%;           /* #EF4444 */
+  --color-accent-cyan: 189 94% 43%;    /* #06B6D4 */
+  --radius-card: 12px;
+  --radius-input: 8px;
+  --radius-pill: 6px;
+  --radius-button: 8px;
+  --shadow-card: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px -12px rgba(15,23,42,.10);
+
+  --button-outline: rgba(16,24,40, .10);
+  --badge-outline: rgba(16,24,40, .05);
+
+  --opaque-button-border-intensity: -6;
+
+  --elevate-1: rgba(16,24,40, .04);
+  --elevate-2: rgba(16,24,40, .08);
+
+  /* Backgrounds & surfaces */
+  --background: #F8FAFC;
+  --foreground: #0F172A;
+  --card: #FFFFFF;
+  --card-foreground: #0F172A;
+  --popover: #FFFFFF;
+  --popover-foreground: #0F172A;
+
+  /* Primary */
+  --primary: #2E7DFF;
+  --primary-foreground: #FFFFFF;
+  --primary-light: #EAF2FF;
+
+  /* Secondary / Muted */
+  --secondary: #F2F4F7;
+  --secondary-foreground: #0F172A;
+  --muted: #F9FAFB;
+  --muted-foreground: #64748B;
+
+  /* Accent cyan (use sparingly - data points / progress / key numbers only) */
+  --accent: #00C2FF;
+  --accent-foreground: #0C4A6E;
+
+  /* Info */
+  --info: #175CD3;
+  --info-foreground: #FFFFFF;
+
+  /* Semantic colors */
+  --destructive: #EF4444;
+  --destructive-foreground: #FFFFFF;
+  --success: #10B981;
+  --success-foreground: #FFFFFF;
+  --warning: #F59E0B;
+  --warning-foreground: #FFFFFF;
+
+  /* Text hierarchy */
+  --text-primary: #0F172A;
+  --text-secondary: #64748B;
+  --text-tertiary: #94A3B8;
+
+  /* Border & input */
+  --border: #E6EAF2;
+  --border-strong: #E6EAF2;
+  --input: #E6EAF2;
+  --ring: #2E7DFF;
+
+  /* Background subtles */
+  --bg-subtle: #FAFBFD;
+
+  /* Brand variants */
+  --brand-hover: #2F4AE0;
+  --brand-soft: #EEF2FF;
+
+  /* Chart palette (5-color sequential, ordered) */
+  --chart-1: #3B5BFF;
+  --chart-2: #00C2FF;
+  --chart-3: #7A9BFF;
+  --chart-4: #5FD3E8;
+  --chart-5: #B9C6E8;
+
+  /* Sidebar */
+  --sidebar: #FAFBFC;
+  --sidebar-foreground: #5B6B85;
+  --sidebar-primary: #2E7DFF;
+  --sidebar-primary-foreground: #FFFFFF;
+  --sidebar-accent: #EAF2FF;
+  --sidebar-accent-foreground: #2E7DFF;
+  --sidebar-border: #E6EAF2;
+  --sidebar-ring: #2E7DFF;
+
+  /* Dark theme tokens (legacy dashboard, kept for reference) */
+  --dark-bg: #0A0E1A;
+  --dark-panel: #111827;
+  --dark-panel-2: #161E2E;
+  --dark-foreground: #FFFFFF;
+  --dark-muted: #64748B;
+  --dark-border: rgba(46,125,255,0.18);
+  --dark-accent: #00C2FF;
+  --dark-success: #12B76A;
+  --dark-warning: #F79009;
+  --dark-danger: #F04438;
+
+  /* Computed borders */
+  --primary-border: hsl(from #2E7DFF h s calc(l + var(--opaque-button-border-intensity)));
+  --secondary-border: hsl(from #F2F4F7 h s calc(l + var(--opaque-button-border-intensity)));
+  --destructive-border: hsl(from #F04438 h s calc(l + var(--opaque-button-border-intensity)));
+  --accent-border: hsl(from #EEF2FF h s calc(l + var(--opaque-button-border-intensity)));
+  --muted-border: hsl(from #F9FAFB h s calc(l + var(--opaque-button-border-intensity)));
+
+  /* Typography */
+  --font-sans:
+    'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC',
+    'LarkHackSafariFont', 'LarkEmojiFont', 'LarkChineseQuote',
+    -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Tahoma, Arial,
+    'Hiragino Sans GB', sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  --font-serif:
+    'Noto Serif SC', 'Geist', 'Geist Fallback', ui-serif, Georgia, Cambria, 'Times New Roman',
+    Times, serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Source Code Pro, monospace;
+
+  /* Border radius (8pt grid) */
+  --radius: 0.75rem;     /* 12px card */
+  --radius-sm: 0.375rem; /* 6px badge */
+  --radius-md: 0.5rem;   /* 8px input/button */
+  --radius-lg: 0.75rem;  /* 12px */
+  --radius-xl: 1rem;
+
+  /* Shadows — single layer, very light */
+  --shadow-sm: 0 1px 2px 0 rgba(16,24,40,0.04);
+  --shadow: 0 1px 2px 0 rgba(16,24,40,0.04);
+  --shadow-md: 0 2px 8px 0 rgba(16,24,40,0.06);
+  --shadow-lg: 0 4px 16px -2px rgba(16,24,40,0.08);
+  --shadow-xl: 0 8px 24px -4px rgba(16,24,40,0.08);
+  --shadow-1: 0 1px 2px rgba(15,23,42,.04), 0 8px 24px -12px rgba(15,23,42,.10);
+  --shadow-2: 0 4px 12px rgba(16,24,40,0.06);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-info: var(--info);
+  --color-info-foreground: var(--info-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-bg-subtle: var(--bg-subtle);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-tertiary: var(--text-tertiary);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --color-dark-bg: var(--dark-bg);
+  --color-dark-panel: var(--dark-panel);
+  --color-dark-panel-2: var(--dark-panel-2);
+  --color-dark-foreground: var(--dark-foreground);
+  --color-dark-muted: var(--dark-muted);
+  --color-dark-border: var(--dark-border);
+  --color-dark-accent: var(--dark-accent);
+  --color-dark-success: var(--dark-success);
+  --color-dark-warning: var(--dark-warning);
+  --color-dark-danger: var(--dark-danger);
+
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --font-serif: var(--font-serif);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+  --radius-pill: var(--radius-pill);
+  --radius-card: var(--radius-card);
+  --radius-button: var(--radius-button);
+
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-card: var(--shadow-card);
+}
+
+@layer utilities {
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: var(--muted-foreground);
+    pointer-events: none;
+  }
+
+  .no-default-hover-elevate {}
+  .no-default-active-elevate {}
+
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: -1;
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  :where(.hover-elevate:not(.no-default-hover-elevate)),
+  :where(.active-elevate:not(.no-default-active-elevate)),
+  :where(.hover-elevate-2:not(.no-default-hover-elevate)),
+  :where(.active-elevate-2:not(.no-default-active-elevate)) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    border-radius: inherit;
+    z-index: 999;
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  .tnum {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* === Design Tokens Reference ===
+
+Color Palette (HSL):
+  --color-primary:       221 83% 53%    #2563EB  主色
+  --color-primary-deep:  224 76% 48%    #1D4ED8  主色深
+  --color-primary-soft:  224 100% 97%   #EFF4FF  主色浅
+  --color-page-bg:       210 40% 98%    #F7F9FC  页面背景
+  --color-card-bg:       0 0% 100%      #FFFFFF  卡片背景
+  --color-border:        220 20% 93%    #E6EAF2  边框
+  --color-text-primary:  222 47% 11%    #0F172A  一级文字
+  --color-text-secondary: 217 19% 35%   #475569  二级文字
+  --color-text-weak:     215 16% 65%    #94A3B8  弱文字
+  --color-success:       142 71% 45%    #16A34A  成功
+  --color-warning:       38 92% 50%     #F59E0B  警告
+  --color-danger:        0 72% 51%      #DC2626  危险
+  --color-accent-cyan:   189 94% 43%    #06B6D4  强调青
+
+Radius:
+  --radius-card:   12px    卡片圆角
+  --radius-input:  8px     输入框圆角
+  --radius-pill:   999px   胶囊圆角
+
+Shadow:
+  --shadow-card:   0 1px 2px rgba(15,23,42,.04), 0 8px 24px rgba(15,23,42,.04)
+
+Typography:
+  .tnum — 等宽数字 (tabular-nums)
+*/

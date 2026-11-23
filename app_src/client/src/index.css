@@ -1,0 +1,415 @@
+@import url("https://miaoda.feishu.cn/fonts/css2?family=Noto+Sans+SC:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap");
+@import '@lark-apaas/client-toolkit/lib/index.css';
+@import "tw-animate-css";
+@import "./tailwind-theme.css";
+@import "./typography.css";
+
+@config "../../tailwind.config.ts";
+
+/* ==== Typography utilities ==== */
+.tnum {
+  font-variant-numeric: tabular-nums;
+  font-family: 'Inter', var(--font-sans);
+}
+
+/* Apply tabular-nums to all numeric elements by default */
+[class*="col-num"],
+.kpi-number,
+.num {
+  font-variant-numeric: tabular-nums;
+  font-family: 'Inter', var(--font-sans);
+}
+
+/* ==== Font size hierarchy ==== */
+/* Page h1: 24px/600 */
+.page-header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 32px;
+}
+
+/* Card/section title: 16px/600 */
+.card-title,
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Body base styles */
+body {
+  font-family: var(--font-sans);
+  color: var(--text-primary);
+  background-color: var(--background);
+  font-size: 14px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ==== Button global override ==== */
+[data-slot="button"] {
+  transition: background-color 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+
+[data-slot="button"]:hover {
+  transform: none !important;
+}
+
+/* ==== Card ==== */
+.dashboard-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+}
+
+.page-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow-1);
+}
+
+.page-card-padding-lg {
+  padding: 24px;
+}
+
+.page-card-padding-sm {
+  padding: 20px;
+}
+
+/* ==== KPI number ==== */
+.kpi-number {
+  font-variant-numeric: tabular-nums;
+  font-family: 'Inter', var(--font-sans);
+  font-weight: 650;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+/* ==== Count-up / chart animations ==== */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes chartSweep {
+  from { clip-path: inset(0 100% 0 0); }
+  to { clip-path: inset(0 0 0 0); }
+}
+
+.chart-sweep {
+  animation: chartSweep 800ms ease-out both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chart-sweep,
+  .kpi-number {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==== Status dot ==== */
+.status-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.status-dot-success { background-color: #12B76A; }
+.status-dot-warning { background-color: #F79009; }
+.status-dot-danger { background-color: #F04438; }
+.status-dot-default { background-color: #98A2B3; }
+
+/* ==== Status pill ==== */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.status-pill::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.status-pill-success {
+  color: #027A48;
+  background: #ECFDF3;
+}
+
+.status-pill-warning {
+  color: #B54708;
+  background: #FFFAEB;
+}
+
+.status-pill-danger {
+  color: #B42318;
+  background: #FEF3F2;
+}
+
+.status-pill-info {
+  color: #175CD3;
+  background: #EFF8FF;
+}
+
+.status-pill-default {
+  color: #475467;
+  background: #F2F4F7;
+}
+
+/* ==== Page header ==== */
+.page-header p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+/* ==== Filter bar ==== */
+.filter-bar-card {
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 0 0 12px 0;
+  box-shadow: none;
+  min-height: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* ==== Empty state ==== */
+.empty-state-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 64px 24px;
+  text-align: center;
+  gap: 8px;
+}
+
+.empty-state-card .empty-icon {
+  width: 48px;
+  height: 48px;
+  color: #C7D2E4;
+  margin-bottom: 4px;
+}
+
+.empty-state-card .empty-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.empty-state-card .empty-desc {
+  font-size: 12px;
+  color: var(--text-tertiary);
+  margin-bottom: 4px;
+}
+
+/* ==== Skeleton pulse ==== */
+@keyframes skeletonPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.6; }
+}
+
+.skeleton-pulse {
+  animation: skeletonPulse 1.6s ease-in-out infinite;
+  background: #F2F5FA;
+  border-radius: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skeleton-pulse { animation: none; }
+}
+
+/* ==== Ant Design table (global override) ==== */
+.ant-table {
+  font-family: var(--font-sans);
+  font-size: 13px;
+  color: var(--text-primary);
+  background: transparent;
+}
+
+.ant-table-thead > tr > th {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border) !important;
+  height: 44px;
+  padding: 0 16px !important;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid rgba(16, 24, 40, 0.04) !important;
+  height: 52px;
+  padding: 0 16px !important;
+  color: var(--text-primary);
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #F9FAFC !important;
+}
+
+.ant-table-cell {
+  border-right: none !important;
+}
+
+/* ==== Data table (shadcn/ui Table) - global override ==== */
+[data-slot="table"],
+.data-table {
+  width: 100%;
+}
+
+[data-slot="table"] thead th,
+.data-table thead th {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-tertiary);
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border) !important;
+  height: 44px;
+  padding: 0 16px !important;
+}
+
+[data-slot="table"] tbody td,
+.data-table tbody td {
+  font-size: 13px;
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(16, 24, 40, 0.04) !important;
+  height: 52px;
+  padding: 0 16px !important;
+}
+
+[data-slot="table"] tbody tr:hover td,
+.data-table tbody tr:hover td {
+  background: #F9FAFC;
+}
+
+[data-slot="table"] tbody tr:last-child td,
+.data-table tbody tr:last-child td {
+  border-bottom: none !important;
+}
+
+.data-table .col-num,
+[data-slot="table"] .col-num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.cell-empty {
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.col-actions {
+  text-align: right;
+}
+
+.table-action-link {
+  color: var(--primary);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.table-action-link:hover {
+  text-decoration: underline;
+}
+
+/* ==== Card-row table (diagnosis list style) ==== */
+.card-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 0 20px;
+  height: 64px;
+  border-bottom: 1px solid #F0F4FA;
+  transition: background-color 120ms ease;
+}
+
+.card-row:hover {
+  background: #FAFBFD;
+}
+
+.card-row:last-child {
+  border-bottom: none;
+}
+
+/* ==== Content width container ==== */
+.content-wrapper {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding-left: 28px;
+  padding-right: 28px;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+}
+
+/* ==== Scrollbar ==== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D8E0ED;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B8C3D6;
+}
+
+/* ==== Chart panel background ==== */
+.chart-panel {
+  background: #F6F8FC;
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* ==== Column resize ==== */
+.col-resizing {
+  user-select: none;
+  cursor: col-resize !important;
+}
+.col-resizing * {
+  cursor: col-resize !important;
+}
+
+/* Ensure last column handle doesn't overflow table */
+[data-slot="table-head"]:last-child .col-resize-handle {
+  right: 0;
+}
+
+/* ==== Hub 页隐藏内层页面自带的页头（避免双层标题） ==== */
+.hub-content-inner [data-page-header="true"],
+.hub-content-inner .page-header {
+  display: none;
+}
